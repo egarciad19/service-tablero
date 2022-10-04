@@ -34,7 +34,7 @@ public class TareaController extends CommonController<TareaModel, TareaSvc>{
     @Autowired
     protected TareaSvc Service;
     
-    @GetMapping("/obtener/tareas/codigoLista/{codigoLista}")
+    @GetMapping("/obtener/tareas/{codigoLista}")
     @ApiOperation(value = "Obtener todas las tareas por codigo de lista")
     public List<TareaModel> obtenerTablerosByUsuario(
             @PathVariable @ApiParam(value = "Codigo Lista") Integer codigoLista,

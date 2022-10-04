@@ -34,7 +34,7 @@ public class ListaTareaController extends CommonController<ListaTareaModel, List
     @Autowired
     protected ListaTareaSvc Service;
     
-    @GetMapping("/obtener/listas/codigoTablero{codigoTablero}")
+    @GetMapping("/obtener/listas/{codigoTablero}")
     @ApiOperation(value = "Obtener todas las listas por codigo de tablero")
     public List<ListaTareaModel> obtenerTablerosByUsuario(
             @PathVariable @ApiParam(value = "Codigo Tablero") Integer codigoTablero,

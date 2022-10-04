@@ -39,7 +39,7 @@ public class TableroController extends CommonController<TableroModel, TableroSvc
     @Autowired
     protected TableroSvc Service;
 
-    @GetMapping("/obtener/tableros/usuario/{usuario}")
+    @GetMapping("/obtener/tableros/{usuario}")
     @ApiOperation(value = "Obtener todos los tableros por usuario")
     public List<TableroModel> obtenerTablerosByUsuario(
             @PathVariable @ApiParam(value = "Usuario") String usuario,
