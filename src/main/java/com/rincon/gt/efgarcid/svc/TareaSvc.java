@@ -5,12 +5,16 @@
 package com.rincon.gt.efgarcid.svc;
 
 import com.rincon.gt.efgarcid.common.CommonSvc;
+import com.rincon.gt.efgarcid.models.TableroModel;
 import com.rincon.gt.efgarcid.models.TareaModel;
+import java.util.List;
 
 /**
  *
  * @author egarc
  */
 public interface TareaSvc extends CommonSvc<TareaModel>{
+    
+    public List<TareaModel> obtenerTareasByCodigoLista(Integer codigoLista) throws Exception;
     
 }

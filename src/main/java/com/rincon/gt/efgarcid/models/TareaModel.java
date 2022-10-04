@@ -7,6 +7,8 @@ package com.rincon.gt.efgarcid.models;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import org.hibernate.annotations.DynamicUpdate;
@@ -22,7 +24,8 @@ import org.hibernate.annotations.DynamicUpdate;
 )
 public class TareaModel {
     @Id
-    @Column(name = "codigo_tarea", unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "codigo_tarea")
     private Integer codigoTarea;
     
     @Column(name = "codigo_lista")

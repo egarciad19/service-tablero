@@ -8,6 +8,8 @@ import com.rincon.gt.efgarcid.common.CommonImpl;
 import com.rincon.gt.efgarcid.models.ListaTareaModel;
 import com.rincon.gt.efgarcid.repository.ListaTareaRepository;
 import com.rincon.gt.efgarcid.svc.ListaTareaSvc;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +18,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ListaTareaImpl extends CommonImpl<ListaTareaModel,ListaTareaRepository> implements   ListaTareaSvc{
+    
+    @Autowired
+    protected ListaTareaRepository Repository;
+    
+    @Override
+    public List<ListaTareaModel> obtenerListasByCodigoTablero(Integer codigoTablero) throws Exception {
+        List<ListaTareaModel> listaTarea = Repository.obtenerListaByTarea(codigoTablero);
+        return listaTarea;
+    }
     
 }
