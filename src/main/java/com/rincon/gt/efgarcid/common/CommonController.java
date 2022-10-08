@@ -74,12 +74,12 @@ public class CommonController<E, S extends CommonSvc<E>> {
         return ResponseEntity.status(HttpStatus.CREATED).body(entityDb);
     }
     
-    /*@DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     @ApiOperation(value = "Elimina la infirmación de un objeto")
     public ResponseEntity<?> eliminar(@PathVariable(required = true) @ApiParam(value = "id") Integer id, @RequestHeader(name = "Accept-Languaje", required = false) Locale locale) {
         service.deleteById(id);
         return ResponseEntity.noContent().build();
-    }*/
+    }
 
     protected ResponseEntity<?> validar(BindingResult result) {
         Map<String, Object> errores = new HashMap<>();
