@@ -29,4 +29,10 @@ public class TableroImpl extends CommonImpl<TableroModel, TableroRepository> imp
         return tableros;
     }
 
+    @Override
+    public List<TableroModel> obtenerTablerosByUsuarios(String usuarioAsignacion, String usuarioAdiciono) throws Exception {
+        List<TableroModel> tableros = Repository.AsignacionOrUsuarioAdiciono(usuarioAsignacion, usuarioAdiciono);
+        return tableros;
+    }
+
 }

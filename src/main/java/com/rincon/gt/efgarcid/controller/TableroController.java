@@ -40,13 +40,32 @@ public class TableroController extends CommonController<TableroModel, TableroSvc
     protected TableroSvc Service;
 
     @GetMapping("/obtener/tableros/{usuario}")
-    @ApiOperation(value = "Obtener todos los tableros por usuario")
+    @ApiOperation(value = "Obtener todos los tableros por usuario asignacion")
     public List<TableroModel> obtenerTablerosByUsuario(
             @PathVariable @ApiParam(value = "Usuario") String usuario,
             @RequestHeader(name = "Accept-Languaje", required = false) Locale locale)
             throws Exception {
         try {
             List<TableroModel> tablero = service.obtenerTableros(usuario);
+            return tablero;
+        } catch (Exception handlerException) {
+            logger.info("Entro a catch");
+            return (List<TableroModel>) ResponseEntity.notFound().build();
+        }
+
+    }
+    
+    @GetMapping("/obtener/tableros/tipo/{usuario}")
+    @ApiOperation(value = "Obtener todos los tableros por usuario asignacion o usuario adiciono")
+    public List<TableroModel> obtenerTablerosByUsuarioOrAsignacion(
+            @PathVariable @ApiParam(value = "Usuario") String usuario,
+            @RequestHeader(name = "Accept-Languaje", required = false) Locale locale)
+            throws Exception {
+        try {
+            String usuarioAsignacion = usuario;
+            String usuarioAdiciono = usuario;
+            logger.info("usuarioAsignacion" + usuarioAsignacion + "usuarioAdiciono" + usuarioAdiciono);
+            List<TableroModel> tablero = service.obtenerTablerosByUsuarios(usuarioAsignacion, usuarioAdiciono);
             return tablero;
         } catch (Exception handlerException) {
             logger.info("Entro a catch");

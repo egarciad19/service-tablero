@@ -20,4 +20,11 @@ public interface TableroRepository extends CrudRepository<TableroModel, Object>{
     @Query(value = "select * from bd_tablero.bd_tablero  bt where bt.usuario_asignacion = :usuario",
             nativeQuery = true)
     List<TableroModel> obtenerTablerosByUsuario(@Param("usuario") String usuario);
+    
+    /*Obtener todos los tableros por Usuario*/
+    @Query(value = "select * from bd_tablero.bd_tablero bt where "
+            + "bt.usuario_asignacion = :usuarioAsignacion or bt.usuario_adiciono = :usuarioAdiciono",
+            nativeQuery = true)
+    List<TableroModel> AsignacionOrUsuarioAdiciono(@Param("usuarioAsignacion") String usuarioAsignacion,
+            @Param("usuarioAdiciono") String usuarioAdiciono);
 }

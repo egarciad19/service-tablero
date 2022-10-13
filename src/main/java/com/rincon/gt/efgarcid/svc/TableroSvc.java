@@ -21,4 +21,6 @@ public interface TableroSvc extends CommonSvc<TableroModel>{
     
     public List<TableroModel> obtenerTableros(String usuario) throws Exception;
     
+    public List<TableroModel> obtenerTablerosByUsuarios(String usuarioAsignacion, String usuarioAdiciono) throws Exception;
+    
 }
