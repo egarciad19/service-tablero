@@ -16,4 +16,5 @@ import java.util.List;
 public interface ListaTareaSvc extends CommonSvc<ListaTareaModel>{
     
     public List<ListaTareaModel> obtenerListasByCodigoTablero(Integer codigoTablero) throws Exception;
+    
 }

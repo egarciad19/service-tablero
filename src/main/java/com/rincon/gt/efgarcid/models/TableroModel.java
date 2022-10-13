@@ -42,17 +42,21 @@ public class TableroModel {
     
     @Column(name = "estado")
     private String estado;
+    
+    @Column(name = "usuario_adiciono")
+    private String usuarioAdiciono;
 
     public TableroModel() {
     }
 
-    public TableroModel(Integer codigoTablero, String nombreTablero, String descripcion, String usuarioAsignacion, String esPbulico, String estado) {
+    public TableroModel(Integer codigoTablero, String nombreTablero, String descripcion, String usuarioAsignacion, String esPbulico, String estado, String usuarioAdiciono) {
         this.codigoTablero = codigoTablero;
         this.nombreTablero = nombreTablero;
         this.descripcion = descripcion;
         this.usuarioAsignacion = usuarioAsignacion;
         this.esPbulico = esPbulico;
         this.estado = estado;
+        this.usuarioAdiciono = usuarioAdiciono;
     }
 
     public Integer getCodigoTablero() {
@@ -101,6 +105,19 @@ public class TableroModel {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public String getUsuarioAdiciono() {
+        return usuarioAdiciono;
+    }
+
+    public void setUsuarioAdiciono(String usuarioAdiciono) {
+        this.usuarioAdiciono = usuarioAdiciono;
+    }
+
+    @Override
+    public String toString() {
+        return "TableroModel{" + "codigoTablero=" + codigoTablero + ", nombreTablero=" + nombreTablero + ", descripcion=" + descripcion + ", usuarioAsignacion=" + usuarioAsignacion + ", esPbulico=" + esPbulico + ", estado=" + estado + ", usuarioAdiciono=" + usuarioAdiciono + '}';
     }
     
     
