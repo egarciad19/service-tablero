@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
  *
  * @author egarc
  */
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://app-organizador-tareas.herokuapp.com")
 public class CommonController<E, S extends CommonSvc<E>> {
     
     @Autowired

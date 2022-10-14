@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api
 @RestController
 @RequestMapping("/tablero")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://app-organizador-tareas.herokuapp.com")
 public class TableroController extends CommonController<TableroModel, TableroSvc> {
 
     Logger logger = Logger.getLogger("My Logs efgarcid");

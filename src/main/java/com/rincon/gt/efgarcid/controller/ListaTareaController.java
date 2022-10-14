@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api
 @RestController
 @RequestMapping("/lista")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://app-organizador-tareas.herokuapp.com")
 public class ListaTareaController extends CommonController<ListaTareaModel, ListaTareaSvc>{
     @Autowired
     protected ListaTareaSvc Service;

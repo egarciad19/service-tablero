@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api
 @RestController
 @RequestMapping("/etiqueta")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://app-organizador-tareas.herokuapp.com")
 public class EtiquetaController extends CommonController<EtiquetaModel, EtiquetaSvc>{
    
 }

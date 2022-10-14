@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api
 @RestController
 @RequestMapping("/tarea")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://app-organizador-tareas.herokuapp.com")
 public class TareaController extends CommonController<TareaModel, TareaSvc>{
     @Autowired
     protected TareaSvc Service;
