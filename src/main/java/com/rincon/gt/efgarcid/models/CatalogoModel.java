@@ -27,7 +27,7 @@ public class CatalogoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo_catalogo")
-    private  BigDecimal codigoCatalogo;
+    private Integer codigoCatalogo;
     
     @Column(name = "nombre")
     private String nombre;
@@ -50,7 +50,7 @@ public class CatalogoModel {
     public CatalogoModel() {
     }
 
-    public CatalogoModel(BigDecimal codigoCatalogo, String nombre, String descripcion, String usuarioAdiciono, Date fechaAdiciono, String usuarioModifico, Date fechaModifico) {
+    public CatalogoModel(Integer codigoCatalogo, String nombre, String descripcion, String usuarioAdiciono, Date fechaAdiciono, String usuarioModifico, Date fechaModifico) {
         this.codigoCatalogo = codigoCatalogo;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -60,11 +60,11 @@ public class CatalogoModel {
         this.fechaModifico = fechaModifico;
     }
 
-    public BigDecimal getCodigoCatalogo() {
+    public Integer getCodigoCatalogo() {
         return codigoCatalogo;
     }
 
-    public void setCodigoCatalogo(BigDecimal codigoCatalogo) {
+    public void setCodigoCatalogo(Integer codigoCatalogo) {
         this.codigoCatalogo = codigoCatalogo;
     }
 
@@ -115,6 +115,6 @@ public class CatalogoModel {
     public void setFechaModifico(Date fechaModifico) {
         this.fechaModifico = fechaModifico;
     }
-    
+
     
 }
