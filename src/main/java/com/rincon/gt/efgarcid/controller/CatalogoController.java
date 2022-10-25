@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api
 @RestController
 @RequestMapping("/catalogo")
-@CrossOrigin(origins = "https://app-organizador-tareas.herokuapp.com")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CatalogoController extends CommonController<CatalogoModel, CatologoSvc>{
     
 }

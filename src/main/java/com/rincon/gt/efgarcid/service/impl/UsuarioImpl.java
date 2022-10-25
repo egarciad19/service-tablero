@@ -11,6 +11,9 @@ import com.rincon.gt.efgarcid.repository.TareaRepository;
 import com.rincon.gt.efgarcid.repository.UsuarioRepository;
 import com.rincon.gt.efgarcid.svc.TareaSvc;
 import com.rincon.gt.efgarcid.svc.UsuarioSvc;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -19,5 +22,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UsuarioImpl extends CommonImpl<UsuarioModel, UsuarioRepository> implements UsuarioSvc{
+    
+    @Autowired
+    protected UsuarioRepository Repository;
+    
+    @Override
+    public Optional<List<UsuarioModel>> obtenerUsuarioByContrasenia(String correoElectronico, String passwordUsuario) throws Exception {
+       Optional<List<UsuarioModel>> usuario = Repository.obtenerUsuarioByContrasenia(correoElectronico, passwordUsuario);
+       return usuario;
+    }
     
 }
